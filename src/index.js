@@ -23,7 +23,10 @@ root.render(
       <CssBaseline />
       <Provider store={store}>
         <PersistGate loading={<PageLoader fullPage label='Restoring session…' />} persistor={persistor}>
-          <BrowserRouter>
+          <BrowserRouter
+            basename={process.env.PUBLIC_URL}
+            future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+          >
             <App />
           </BrowserRouter>
         </PersistGate>

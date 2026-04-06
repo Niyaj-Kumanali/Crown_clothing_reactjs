@@ -10,13 +10,13 @@ const Overlay = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: ${({ fullPage }) => (fullPage ? '100vh' : '40vh')};
+  min-height: ${({ $fullPage }) => ($fullPage ? '100vh' : '40vh')};
   gap: 1.2rem;
 `;
 
 const Spinner = styled.div`
-  width: ${({ size }) => size || '48px'};
-  height: ${({ size }) => size || '48px'};
+  width: ${({ $size }) => $size || '48px'};
+  height: ${({ $size }) => $size || '48px'};
   border: 3px solid #e0e0e0;
   border-top-color: #000;
   border-radius: 50%;
@@ -34,8 +34,8 @@ const Label = styled.p`
 `;
 
 const PageLoader = ({ label = 'Loading…', fullPage = false, size }) => (
-  <Overlay fullPage={fullPage}>
-    <Spinner size={size} />
+  <Overlay $fullPage={fullPage}>
+    <Spinner $size={size} />
     <Label>{label}</Label>
   </Overlay>
 );
