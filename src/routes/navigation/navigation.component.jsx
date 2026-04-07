@@ -44,7 +44,7 @@ const Navigation = () => {
             <NavLinks>
               <NavLink to='/shop'>SHOP</NavLink>
               {currentUser ? (
-                <NavLink as='span' onClick={handleSignOut} role='button' tabIndex={0} sx={{ cursor: 'pointer' }}>
+                <NavLink as='span' onClick={handleSignOut} role='button' tabIndex={0}>
                   SIGN OUT
                 </NavLink>
               ) : (

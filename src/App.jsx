@@ -24,8 +24,12 @@ const App = () => {
     const unsubscribe = onAuthStateChangedListener((user) => {
       if (user) {
         createUserDocumentFromAuth(user);
+        // Only pick serializable data for Redux
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(setCurrentUser({ uid, email, displayName, photoURL }));
+      } else {
+        dispatch(setCurrentUser(user));
       }
-      dispatch(setCurrentUser(user));
     });
 
     return unsubscribe;

@@ -6,10 +6,10 @@ const Authentication = () => {
   return (
     <Container maxWidth='lg' sx={{ mt: 8, mb: 8 }}>
       <Grid container spacing={6} justifyContent='center'>
-        <Grid item xs={12} md={5}>
+        <Grid size={{ xs: 12, md: 5 }}>
           <SignInForm />
         </Grid>
-        <Grid item xs={12} md={5}>
+        <Grid size={{ xs: 12, md: 5 }}>
           <SignUpForm />
         </Grid>
       </Grid>

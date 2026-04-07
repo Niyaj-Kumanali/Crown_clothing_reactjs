@@ -29,6 +29,19 @@ const SignInForm = () => {
     try {
       await signInWithGooglePopup();
     } catch (err) {
+      console.error('Sign in error:', err);
+      if (err.code === 'auth/popup-closed-by-user') {
+        setError('Sign-in window closed. Please try again.');
+        return;
+      }
+      if (err.code === 'auth/unauthorized-domain') {
+        setError('New domain not authorized in Firebase Console settings.');
+        return;
+      }
+      if (err.code === 'auth/operation-not-allowed') {
+        setError('Google sign-in provider is disabled in Firebase console.');
+        return;
+      }
       setError('Google sign in failed. Please try again.');
     }
   };
