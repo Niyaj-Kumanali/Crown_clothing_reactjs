@@ -1,19 +1,27 @@
 import { memo, useCallback, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardMedia, Typography, Button as MuiButton, Box } from '@mui/material';
 
 import { addItemToCart } from '../../store/cart/cart.slice';
+import { selectCurrentUser } from '../../store/user/user.slice';
 
 const ProductCard = memo(({ product }) => {
   const { name, price, imageUrl } = product;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const currentUser = useSelector(selectCurrentUser);
   const [added, setAdded] = useState(false);
 
   const addProductToCart = useCallback(() => {
+    if (!currentUser) {
+      navigate('/auth');
+      return;
+    }
     dispatch(addItemToCart(product));
     setAdded(true);
     setTimeout(() => setAdded(false), 1200);
-  }, [dispatch, product]);
+  }, [dispatch, product, currentUser, navigate]);
 
   return (
     <Card

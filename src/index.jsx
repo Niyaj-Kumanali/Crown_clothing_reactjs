@@ -22,9 +22,9 @@ root.render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Provider store={store}>
-        <PersistGate loading={<PageLoader fullPage label='Restoring session…' />} persistor={persistor}>
+        <PersistGate loading={<PageLoader $fullPage label='Restoring session…' />} persistor={persistor}>
           <BrowserRouter
-            basename={process.env.PUBLIC_URL}
+            basename={import.meta.env.BASE_URL}
             future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
           >
             <App />

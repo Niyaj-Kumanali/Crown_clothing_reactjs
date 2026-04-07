@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <ErrorBoundary>
-      <Suspense fallback={<PageLoader fullPage label='Loading…' />}>
+      <Suspense fallback={<PageLoader $fullPage label='Loading…' />}>
         <Routes>
           <Route path='/' element={<Navigation />}>
             <Route index element={<Home />} />
