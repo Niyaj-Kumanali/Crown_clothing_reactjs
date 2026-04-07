@@ -1,7 +1,7 @@
 import { Fragment, useCallback } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { AppBar, Toolbar, Box, IconButton, useMediaQuery, useTheme } from '@mui/material';
+import { AppBar, Toolbar, Box, useMediaQuery, useTheme } from '@mui/material';
 
 import CartIcon from '../../components/cart-icon/cart-icon.component';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
@@ -13,7 +13,6 @@ import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
 import {
-  NavigationContainer,
   NavLinks,
   NavLink,
   LogoContainer,

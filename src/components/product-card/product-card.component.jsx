@@ -1,6 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Card, CardMedia, CardContent, Typography, Button as MuiButton, Box } from '@mui/material';
+import { Card, CardMedia, Typography, Button as MuiButton, Box } from '@mui/material';
 
 import { addItemToCart } from '../../store/cart/cart.slice';
 
@@ -39,7 +39,7 @@ const ProductCard = memo(({ product }) => {
         alt={name}
         sx={{
           width: '100%',
-          height: '95%',
+          height: '90%',
           objectFit: 'cover',
           marginBottom: '5px',
         }}
@@ -47,9 +47,10 @@ const ProductCard = memo(({ product }) => {
       <Box
         sx={{
           width: '100%',
-          height: '5%',
+          height: '10%',
           display: 'flex',
           justifyContent: 'space-between',
+          alignItems: 'center',
           fontSize: '18px',
           padding: '0 10px',
         }}

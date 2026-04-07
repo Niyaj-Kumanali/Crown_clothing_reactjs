@@ -1,11 +1,10 @@
 import { memo, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import {
   clearItemFromCart,
   addItemToCart,
   removeItemFromCart,
-  selectCartItems,
 } from '../../store/cart/cart.slice';
 
 import {

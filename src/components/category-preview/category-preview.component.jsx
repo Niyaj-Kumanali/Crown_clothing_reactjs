@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Link as MuiLink } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ProductCard from '../product-card/product-card.component';
 
